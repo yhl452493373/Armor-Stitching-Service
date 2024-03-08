@@ -6,6 +6,7 @@
 		<Version>1.0.0</Version>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<LangVersion>latest</LangVersion>
+        <DependencyVersion>0.14.1.1.28965-sit</DependencyVersion>
 	</PropertyGroup>
 
     <ItemGroup>
@@ -23,18 +24,6 @@
         <Reference Include="0Harmony">
             <HintPath>.\references\0Harmony.dll</HintPath>
         </Reference>
-        <Reference Include="aki-core">
-            <HintPath>.\references\aki-core.dll</HintPath>
-        </Reference>
-        <Reference Include="aki-custom">
-            <HintPath>.\references\aki-custom.dll</HintPath>
-        </Reference>
-        <Reference Include="aki-debugging">
-            <HintPath>.\references\aki-debugging.dll</HintPath>
-        </Reference>
-        <Reference Include="aki-singleplayer">
-            <HintPath>.\references\aki-singleplayer.dll</HintPath>
-        </Reference>
         <Reference Include="Aki.Common">
             <HintPath>.\references\Aki.Common.dll</HintPath>
         </Reference>
@@ -42,13 +31,10 @@
             <HintPath>.\references\Aki.Reflection.dll</HintPath>
         </Reference>
         <Reference Include="Assembly-CSharp">
-            <HintPath>.\references\Assembly-CSharp.dll</HintPath>
+            <HintPath>.\references\$(DependencyVersion)\Assembly-CSharp.dll</HintPath>
         </Reference>
         <Reference Include="BepInEx">
-            <HintPath>.\references\BepInEx.dll</HintPath>
-        </Reference>
-        <Reference Include="bsg.console.core">
-            <HintPath>.\references\bsg.console.core.dll</HintPath>
+            <HintPath>.\references\$(DependencyVersion)\BepInEx.dll</HintPath>
         </Reference>
         <Reference Include="Comfort">
             <HintPath>.\references\Comfort.dll</HintPath>
@@ -65,6 +51,7 @@
         <Reference Include="ItemTemplate.Types">
             <HintPath>.\references\ItemTemplate.Types.dll</HintPath>
         </Reference>
+        
         <Reference Include="UnityEngine">
             <HintPath>.\references\UnityEngine.dll</HintPath>
         </Reference>
@@ -78,8 +65,4 @@
             <HintPath>.\references\UnityEngine.TextRenderingModule.dll</HintPath>
         </Reference>
     </ItemGroup>
-
-    <PropertyGroup>
-        <PostBuildEvent></PostBuildEvent>
-    </PropertyGroup>
 </Project>
