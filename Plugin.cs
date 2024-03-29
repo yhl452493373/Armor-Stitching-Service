@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Reflection;
-using Aki.Reflection.Patching;
 using BepInEx;
 using BepInEx.Configuration;
 using EFT;
+#if SIT
+using StayInTarkov;
+#else
+using Aki.Reflection.Patching;
+#endif
 
 namespace armorMod
 {
