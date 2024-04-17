@@ -1,31 +1,32 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<TargetFramework>net472</TargetFramework>
-		<RootNamespace>dvize.ASS</RootNamespace>
+    <PropertyGroup>
+        <TargetFramework>net472</TargetFramework>
+        <RootNamespace>dvize.ASS</RootNamespace>
         <AssemblyName>dvize.ASS</AssemblyName>
-		<Version>1.0.0</Version>
-		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<LangVersion>latest</LangVersion>
-<!--        <DependencyVersion>0.14.1.2.29197</DependencyVersion>-->
-        <DependencyVersion>0.14.5.5.29704</DependencyVersion>
-	</PropertyGroup>
+        <Version>1.0.0</Version>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>latest</LangVersion>
+        <!--        <DependencyVersion>0.14.1.2.29197</DependencyVersion>-->
+        <DependencyVersion>0.14.5.5.29704-sit</DependencyVersion>
+    </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
-        <PackageReference Include="BepInEx.Core" Version="5.*" />
-        <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
-        <PackageReference Include="UnityEngine.Modules" Version="5.6.0" IncludeAssets="compile" />
+        <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all"/>
+        <PackageReference Include="BepInEx.Core" Version="5.*"/>
+        <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*"/>
+        <PackageReference Include="UnityEngine.Modules" Version="5.6.0" IncludeAssets="compile"/>
     </ItemGroup>
-    
+
     <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
-		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
-	</ItemGroup>
-    
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all"/>
+    </ItemGroup>
+
+    <PropertyGroup>
+        <DefineConstants Condition="$(DependencyVersion.EndsWith('sit'))">SIT</DefineConstants>
+    </PropertyGroup>
+
     <Choose>
-        <When Condition="$(DependencyVersion.EndsWith('sit')) == true">
-            <PropertyGroup>
-                <DefineConstants>SIT</DefineConstants>
-            </PropertyGroup>
+        <When Condition="$(DependencyVersion.EndsWith('sit'))">
             <ItemGroup>
                 <Reference Include=".\references\$(DependencyVersion)\StayInTarkov.dll">
                     <Private>False</Private>
